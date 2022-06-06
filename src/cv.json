@@ -1,0 +1,226 @@
+{
+    "firstName": "Phil",
+    "lastName": "Barnes",
+    "contact": {
+        "phone": "404-840-0510",
+        "email": "phillip.barnes@gmail.com",
+        "address": {
+            "city": "Brookhaven",
+            "state": "GA"
+        }
+    },
+    "summary": "I'm a technology enthusiast that loves creating things and learning new frameworks and languages. I'm looking for a team environment to learn from and share knowledge of interesting technologies and applications.",
+    "experience": [
+        {
+            "companyName": "Intercontinental  Exchange",
+            "position": "Technical Manager / Architect",
+            "startDate": 1556683200000,
+            "endDate": null,
+            "duties": [
+                {
+                    "description": "Assisted in the architecture, design and development of bespoke CMS system for marketing that leveraged web component-like slot design for drag and drop nested componentry",
+                    "technologies": [],
+                    "tags": []
+                },
+                {
+                    "description": "Led re-architecture, redesign and development of subscription and notification admin system to improve end user productivity to be able to meet regulatory requirements",
+                    "technologies": [],
+                    "tags": []
+                },
+                {
+                    "description": "Work with multiple product owners and project managers to align business goals with technologies to meet business needs",
+                    "technologies": [],
+                    "tags": []
+                },
+                {
+                    "description": "Managed a team of developers to meet tight deadlines on multiple projects, often with near simultaneous production delivery",
+                    "technologies": [],
+                    "tags": []
+                }
+            ],
+            "technologies": [
+                "React",
+                "React Query",
+                "GraphQL (Apollo)",
+                "Redux",
+                "CSS (Tailwind)",
+                "Node.js (Express, Apollo Server)"
+            ]
+        },
+        {
+            "companyName": "Candid Partners",
+            "position": "Architect",
+            "startDate": 1509508800000,
+            "endDate": 1554091200000,
+            "duties": [
+                {
+                    "description": "Led architecture and development of proof-of-concept consumer portal using React for real-time data synchronization and offline to online cache and re-sync capabilities on Amazon Web Services (AWS)",
+                    "technologies": [],
+                    "tags": []
+                },
+                {
+                    "description": "Led architecture and development of multiple consumer-facing and crew-facing React UIs within a constrained, embedded solution for IoT soft-drink machines",
+                    "technologies": [],
+                    "tags": []
+                },
+                {
+                    "description": "Assisted in the architecture and development of a Polymer.js digital menu board solution through a self-service portal, integrating with an existing third-party portal through Google Cloud Platform (GCP)",
+                    "technologies": [],
+                    "tags": []
+                }
+            ],
+            "technologies": [
+                "React",
+                "GraphQL (Apollo)",
+                "Redux",
+                "S/CSS",
+                "Web components (Polymer.js)",
+                "Node.js (Express)",
+                "AWS (AppSync, Lambda, SQS, DymanoDB)",
+                "GCP (Cloud Functions, Compute Engine, Firebase)"
+            ]
+        },
+        {
+            "companyName": "StrataCloud",
+            "position": "UI Architect / Senior Developer",
+            "startDate": 1362114000000,
+            "endDate": 1506830400000,
+            "duties": [
+                {
+                    "description": "Led architecture and development of prototype hardware statistical dashboard with peer-to-peer user scenario testing using websockets",
+                    "technologies": [],
+                    "tags": []
+                },
+                {
+                    "description": "Led architecture and development of real-time single-page application (SPA) to configure multiple pieces of converged infrastructure using bespoke DSL language and job engine",
+                    "technologies": [],
+                    "tags": []
+                },
+                {
+                    "description": "Led architecture and development of a multi-tenant SPA to monitor thousands of Virtual Machines (VM) using websockets to communicate with cross-platform services",
+                    "technologies": [],
+                    "tags": []
+                },
+                {
+                    "description": "Assisted in the architecture and development of Node.js client/server library to perform cross-language service discovery",
+                    "technologies": [],
+                    "tags": []
+                },
+                {
+                    "description": "Led architecture and development of multiple Node.js microservices to handle service requests from incoming MQ messages such as hardware and VM provisioning",
+                    "technologies": [],
+                    "tags": []
+                },
+                {
+                    "description": "Led architecture and development of dynamic layout framework allowing for drag-and-drop of components, resizing content for responsive-like re-flowing and configurable charts for customizable dashboard ",
+                    "technologies": [],
+                    "tags": []
+                },
+                {
+                    "description": "Led architecture and development of an in-browser code editor to maintain a collection of data-driven components with live preview",
+                    "technologies": [],
+                    "tags": []
+                }
+            ],
+            "technologies": [
+                "React",
+                "Redux",
+                "React Router",
+                "Backbone.js",
+                "Node.js (Express)",
+                "Websockets (Sock.js)",
+                "AMQP (RabbitMQ)",
+                "MongoDB",
+                "Erlang"
+            ]
+        },
+        {
+            "companyName": "Intercontinental Exchange",
+            "position": "Senior Developer",
+            "startDate": 1267419600000,
+            "endDate": 1359694800000,
+            "duties": [
+                {
+                    "description": "Assisted in architecture and development of mobile web application to deliver near real-time trading data to iOS, Android and BlackBerry devices",
+                    "technologies": [],
+                    "tags": []
+                },
+                {
+                    "description": "Led architecture and development of mobile chat application for real- time trader updates",
+                    "technologies": [],
+                    "tags": []
+                },
+                {
+                    "description": "Led architecture and development of embedded, real-time trading position application",
+                    "technologies": [],
+                    "tags": []
+                }
+            ],
+            "technologies": [
+                "Sencha Touch",
+                "jQuery Mobile",
+                "Ext.js",
+                "Backbone",
+                "CoffeeScript",
+                "Java"
+            ]
+        },
+        {
+            "companyName": "Matrix Resources",
+            "position": "Senior Developer",
+            "startDate": 1267419600000,
+            "endDate": 1262304000000,
+            "duties": [
+                {
+                    "description": "Assisted in the architecture and development of applications for time tracking, candidate job portal and job application tracking",
+                    "technologies": [],
+                    "tags": []
+                }
+            ],
+            "technologies": [
+            "Ext.js",
+            "Ruby on Rails",
+            "Java"
+            ]
+        },
+        {
+            "companyName": "Perot Systems Solutions Consulting",
+            "position": "Senior Consultant",
+            "startDate": 883612800000,
+            "endDate": 1267419600000,
+            "duties": [
+                {
+                    "description": "Led in architecture and development of several Java-based web applications",
+                    "technologies": [],
+                    "tags": []
+                }
+            ]
+        },
+        {
+            "companyName": "Ernst & Young",
+            "position": "Senior Consultant",
+            "startDate": 820454400000,
+            "endDate": 883612800000,
+            "duties": [
+                
+            ]
+        },
+        {
+            "companyName": "Accenture",
+            "position": "Consultant",
+            "startDate": 788918400000,
+            "endDate": 820454400000,
+            "duties": [
+                
+            ]
+        }
+    ],
+    "education": [
+        {
+            "school": "Missouri S & T",
+            "graduationDate": 786258000000,
+            "degree": "Bachelor of Science",
+            "discipline": "Mechanical Engineering"
+        }
+    ]
+}
