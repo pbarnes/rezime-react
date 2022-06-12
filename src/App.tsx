@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import React, { ComponentPropsWithoutRef, FC, ReactNode, useState } from 'react'
 import { v4 as uuid } from 'uuid'
+import { useForm, RegisterOptions } from "react-hook-form";
+
 import './App.css'
-import cv from './cv.json'
+import cv from '../cv.json'
 
 type Duty = {
   description: string;
@@ -69,9 +71,49 @@ function Experience({ experience: { startDate, endDate, position, duties, compan
   )
 }
 
+type InputProps = {
+  name: string;
+  options?: RegisterOptions;
+  className?: string
+}
+
+const Input:FC<InputProps> = ({name, options, className = ''})=> {
+  const { register } = useForm();
+  return (
+      <input {...register(name, options)} className={`mb-2 p-2 b-1 b-bluegray rounded ${className}`}/>
+  )
+}
+
+const Label:FC<{children: ReactNode}> = ({children}) => <label className="text-xxs font-bold uppercase">{children}</label>
+
+interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
+  children: ReactNode;
+};
+
+const Button:FC<ButtonProps> = ({className = '', ...rest}) => <button className={`b-0 rounded text-white bg-blue-500 p-2 uppercase text-xs ${className}`} {...rest} />
+
 function App() {
+  const { handleSubmit, watch, formState: { errors } } = useForm<Duty>();
+  const onSubmit = (data: Duty) => console.log(data);
+
   return (
     <>
+      <aside className="fixed h-screen right-0 top-0 p-4 min-w-xl bg-white">
+
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full h-full space-between">
+          <div className="flex flex-col w-full">
+          <Label>Description</Label>
+          <Input name="description" options={{ required: true }} />
+          <Label>Technologies</Label>
+          <Input name="technologies" />
+          <Label>Tags</Label>
+          <Input name="tags" />
+          </div>
+          <div className="flex w-full">
+          <Button type="submit">Save</Button>
+          </div>
+        </form>
+      </aside>
       <header>
         <h1 className="mb-4">{cv.firstName} {cv.lastName}</h1>
         <address>
