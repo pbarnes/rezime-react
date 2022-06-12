@@ -23,12 +23,3 @@ export type Experience = {
     technologies?: Array<string>;
 }
 
-export type InputProps = {
-    name: string;
-    options?: RegisterOptions;
-    className?: string
-}
-
-export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
-    children: ReactNode;
-};

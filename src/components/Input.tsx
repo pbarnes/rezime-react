@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { ReactNode } from 'react'
 import { useForm, RegisterOptions } from 'react-hook-form'
 
 type InputProps = {
@@ -7,10 +7,10 @@ type InputProps = {
     className?: string
 }
 
-const Input: FC<InputProps> = ({ name, options, className = '' }) => {
+function Input({ name, options, className = '' }: InputProps): ReactNode {
     const { register } = useForm();
     return (
-        <input {...register(name, options)} className={`mb-2 p-2 b-1 b-bluegray rounded ${className}`} />
+        <input {...register(name, options)} aria-label={name} className={`mb-2 p-2 b-1 b-bluegray rounded ${className}`} />
     )
 }
 
