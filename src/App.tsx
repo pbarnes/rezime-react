@@ -1,96 +1,17 @@
-import React, { ComponentPropsWithoutRef, FC, ReactNode, useState } from 'react'
+import React, { FC, useState, ReactNode } from 'react'
 import { v4 as uuid } from 'uuid'
-import { useForm, RegisterOptions } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import clsx from 'clsx'
 
+import Experience from './components/Experience'
+import Education from './components/Education'
+import Input from './components/Input'
+import Label from './components/Label'
+import Button from './components/Button'
+import { Duty, } from './types'
 import './App.css'
 import cv from '../cv.json'
 
-type Duty = {
-  description: string;
-  technologies: Array<string>;
-  tags: Array<string>;
-}
-
-type Education = {
-  school: string;
-  graduationDate: number;
-  degree: string;
-  discipline: string;
-}
-
-type Experience = {
-  companyName: string;
-  position: string;
-  startDate: number;
-  endDate: number | null;
-  duties: Array<Duty>;
-  technologies?: Array<string>;
-}
-
-type Props = {
-  experience: Experience;
-}
-
-function formatDate(datetime: number | null, yearOnly = false) {
-  if (!datetime) {
-    return 'Present'
-  }
-  const date = new Date(datetime)
-  return yearOnly ?
-    date.toLocaleDateString('en-us', { year: "numeric" }) :
-    date.toLocaleDateString('en-us', { month: 'short', year: "numeric" })
-}
-
-const TEN_YEARS_AGO = 1359694800000 // Feb 2013
-
-function Experience({ experience: { startDate, endDate, position, duties, companyName, technologies } }: Props) {
-  return (
-    <article>
-      <aside>
-        <h3>{position}</h3>
-        <div className="flex justify-between">
-          <i>{companyName}</i>
-          <span>{formatDate(startDate, startDate < TEN_YEARS_AGO)} - {formatDate(endDate, endDate < TEN_YEARS_AGO)}</span>
-        </div>
-      </aside>
-      <ul>
-        {duties.map(duty => (
-          <li key={uuid()}>
-            {duty.description}
-          </li>
-        ))}
-      </ul>
-      {technologies && (<p>
-        <i><u>Technologies</u>:</i>
-        {technologies?.join(', ')}
-        {/* {experience.technologies?.map(tech => (
-           tech 
-         ))} */}
-      </p>)}
-    </article>
-  )
-}
-
-type InputProps = {
-  name: string;
-  options?: RegisterOptions;
-  className?: string
-}
-
-const Input:FC<InputProps> = ({name, options, className = ''})=> {
-  const { register } = useForm();
-  return (
-      <input {...register(name, options)} className={`mb-2 p-2 b-1 b-bluegray rounded ${className}`}/>
-  )
-}
-
-const Label:FC<{children: ReactNode}> = ({children}) => <label className="text-xxs font-bold uppercase">{children}</label>
-
-interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
-  children: ReactNode;
-};
-
-const Button:FC<ButtonProps> = ({className = '', ...rest}) => <button className={`b-0 rounded text-white bg-blue-500 p-2 uppercase text-xs ${className}`} {...rest} />
 
 function App() {
   const { handleSubmit, watch, formState: { errors } } = useForm<Duty>();
@@ -98,19 +19,19 @@ function App() {
 
   return (
     <>
-      <aside className="fixed h-screen right-0 top-0 p-4 min-w-xl bg-white">
-
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full h-full space-between">
+      <aside className="fixed h-screen right-0 top-0 p-4 min-w-xl bg-white box-border">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full h-full justify-between">
           <div className="flex flex-col w-full">
-          <Label>Description</Label>
-          <Input name="description" options={{ required: true }} />
-          <Label>Technologies</Label>
-          <Input name="technologies" />
-          <Label>Tags</Label>
-          <Input name="tags" />
+            <Label>Description</Label>
+            <Input name="description" options={{ required: true }} />
+            <Label>Technologies</Label>
+            <Input name="technologies" />
+            <Label>Tags</Label>
+            <Input name="tags" />
           </div>
           <div className="flex w-full">
-          <Button type="submit">Save</Button>
+            <Button type="submit">Save</Button>
+            <Button>Cancel</Button>
           </div>
         </form>
       </aside>
@@ -162,18 +83,13 @@ function App() {
         <section>
           <h5>Education</h5>
           {cv.education.map(edu => (
-            <div key={uuid()}>
-              <div className="flex justify-between">
-                <h3>{edu.school}</h3>
-                <span>Graduated {formatDate(edu.graduationDate)}</span>
-              </div>
-              <span>{edu.degree}, {edu.discipline}</span>
-            </div>
+            <Education key={uuid()} education={edu} />
           ))}
         </section>
       </main>
     </>
   )
 }
+
 
 export default App
