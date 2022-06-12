@@ -9,15 +9,15 @@ type Props = {
 }
 
 const Education:FC<Props> = ({education}) => {
-    return (
-      <div>
+  return (
+    <div>
       <div className="flex justify-between">
         <h3>{education.school}</h3>
         <span>Graduated {formatDate(education.graduationDate)}</span>
       </div>
       <span>{education.degree}, {education.discipline}</span>
     </div>
-    )
-  }
+  )
+}
 
 export default Education

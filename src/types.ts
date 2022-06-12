@@ -1,5 +1,3 @@
-import { ReactNode } from 'react'
-import { RegisterOptions } from 'react-hook-form'
 
 export type Duty = {
     description: string;

@@ -11,31 +11,31 @@ type Props = {
 }
 
 function Experience({ experience: { startDate, endDate, position, duties, companyName, technologies } }: Props) {
-    return (
-      <article>
-        <aside>
-          <h3>{position}</h3>
-          <div className="flex justify-between">
-            <i>{companyName}</i>
-            <span>{formatDate(startDate, startDate < TEN_YEARS_AGO)} - {formatDate(endDate, endDate ? endDate < TEN_YEARS_AGO : undefined)}</span>
-          </div>
-        </aside>
-        <ul>
-          {duties.map(duty => (
-            <li key={uuid()}>
-              {duty.description}
-            </li>
-          ))}
-        </ul>
-        {technologies && (<p>
-          <i><u>Technologies</u>:</i>
-          {technologies?.join(', ')}
-          {/* {experience.technologies?.map(tech => (
+  return (
+    <article>
+      <aside>
+        <h3>{position}</h3>
+        <div className="flex justify-between">
+          <i>{companyName}</i>
+          <span>{formatDate(startDate, startDate < TEN_YEARS_AGO)} - {formatDate(endDate, endDate ? endDate < TEN_YEARS_AGO : undefined)}</span>
+        </div>
+      </aside>
+      <ul>
+        {duties.map(duty => (
+          <li key={uuid()}>
+            {duty.description}
+          </li>
+        ))}
+      </ul>
+      {technologies && (<p>
+        <i><u>Technologies</u>:</i>
+        {technologies?.join(', ')}
+        {/* {experience.technologies?.map(tech => (
              tech 
            ))} */}
-        </p>)}
-      </article>
-    )
-  }
+      </p>)}
+    </article>
+  )
+}
 
 export default Experience

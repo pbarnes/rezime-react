@@ -1,7 +1,7 @@
-import React, { FC, useState, ReactNode } from 'react'
+import React from 'react'
 import { v4 as uuid } from 'uuid'
-import { useForm } from "react-hook-form";
-import clsx from 'clsx'
+import { useForm } from 'react-hook-form'
+// import clsx from 'clsx'
 
 import Experience from './components/Experience'
 import Education from './components/Education'
@@ -14,11 +14,12 @@ import cv from '../cv.json'
 
 
 function App() {
-  const { handleSubmit, watch, formState: { errors } } = useForm<Duty>();
-  const onSubmit = (data: Duty) => console.log(data);
+  const { handleSubmit, formState: { errors } } = useForm<Duty>()
+  const onSubmit = (data: Duty) => console.log(data)
 
   return (
     <>
+      {errors && <div>{JSON.stringify(errors)}</div>}
       <aside className="fixed h-screen right-0 top-0 p-4 min-w-xl bg-white box-border">
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full h-full justify-between">
           <div className="flex flex-col w-full">
